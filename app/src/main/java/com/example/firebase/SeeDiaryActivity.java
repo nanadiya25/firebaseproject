@@ -31,11 +31,10 @@ public class SeeDiaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_diary);
 
-        // Inisialisasi RecyclerView
         recyclerView = findViewById(R.id.diaryRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Menambahkan DividerItemDecoration
+
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
@@ -43,7 +42,7 @@ public class SeeDiaryActivity extends AppCompatActivity {
         adapter = new DiaryAdapter(diaryList);
         recyclerView.setAdapter(adapter);
 
-        // Ambil email dari Intent
+
         userEmail = getIntent().getStringExtra("USER_EMAIL");
         db = FirebaseFirestore.getInstance();
 
